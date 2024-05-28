@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15%;
+
+        }
+        a{
+        color: #0056b3;
+        text-decoration: none;
+        text-align: left;
+        font-size: 80%;
+    }
+    a:hover{
+        font-size: 100%;
+    }
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}   
+        table {
+            border-collapse: collapse;
+
+        }
+        td {
+            padding: 5px;
+            border: 1px solid black;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: #192e44;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: max-content;
+            height: max-content;
+        }
+        #firstnum{
+            color: #0056b3;
+            border: #012b57 2px solid;
+            border-radius: 50px;
+        }
+        #secoundnum{
+            color: #0056b3;
+            border: #012b57 2px solid;
+            border-radius: 50px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 10px;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Back</a>
+    </nav>
+    <div class="main">
+    <form>
+    <table>
+        <tr>
+            <td>
+                Fist Num:
+            </td>
+            <td>
+                <input type="number" value="" id="firstnum">
+            </td>
+        </tr>
+        <tr>
+            <td>
+            Secound Num:
+            </td>
+            <td>
+                <input type="number" value="" id="secoundnum">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="add()" type="button">+</button>
+            </td>
+            <td>
+                <p id="result"></p>
+            </td>
+        </tr>
+    </table>
+    </form>
+    </div>
+    <script>
+        function add(){
+            var a=document.getElementById('firstnum').value;
+            var b=document.getElementById('secoundnum').value;
+
+            a=parseInt(a);
+            b=parseInt(b);
+
+            var result=a+b;
+            document.getElementById('result').innerHTML=result;
+        }
+    </script>
+</body>
+</html>

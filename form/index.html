@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web</title>
+    <style>
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+h2{
+    color: #afafaf;
+}
+.container {
+    width: 800px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+input placeholder{
+    color: #ccc;
+}
+a{
+        color: #007bff;
+        text-decoration: none;
+        text-align: left;
+        font-size: 80%;
+    }
+    a:hover{
+        font-size: 100%;
+    }
+
+h1{
+    font-size: 400%;
+    color:#cf2626 ;
+}
+
+button {
+    background-color: #cf2626;
+    color: #fff;
+    padding: 10px 20px;
+    border: 2px #cf2626 solid;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color:  #007bff;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    padding: 15px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #ccc;
+}
+
+  </style>
+</head>
+<body>
+<nav>
+    <a id="aculcolator" href="c.html">Culcolator</a>
+    <a id="ajumpuppage" href="jump-up.html">About Us</a>
+</nav>
+<div id="tableofinfo"></div>
+<h1 id="formh">
+    Personal Info
+</h1>
+
+<form onsubmit="handleSubmit(event)">
+ <table>
+    <tr>
+        <td>Name:</td>
+        <td><input id="name" type="text" placeholder="Enter your name..."></td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    <tr>
+        <td>Last Name:</td>
+        <td><input id="lastname" type="text" placeholder="Enter your last name..."></td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    <tr>
+        <td>Email:</td>
+        <td><input id="email" type="email" placeholder="Enter your email..."></td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    <tr>
+        <td>Password:</td>
+        <td><input id="password" type="password" placeholder="Enter your password..."></td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    <tr>
+        <td>Gender:</td>
+        <td>
+            <input value="Male" class="gender" type="radio" name="gender">Male
+            <input value="Female" class="gender" type="radio" name="gender">Female
+        </td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    <tr>
+        <td>Hobbies:</td>
+        <td>
+            <input class="education" id="playing" value="sports" type="checkbox">sports
+            <input class="education" id="gaming" value="gaming" type="checkbox">gaming
+            <input class="education" id="reading" value="reading" type="checkbox">reading
+            <input class="education" id="coding" value="coding" type="checkbox">coding
+            <input class="education" id="singing" value="singing" type="checkbox">singing
+        </td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    <tr>
+        <td>Course:</td>
+        <td>
+            <select name="course">
+                <option></option>
+                <option>Back End</option>
+                <option>Front End</option>
+                <option>Ux \ UI</option>
+                <option>DS</option>
+                <option>python</option>
+            </select>
+        </td>
+        <tr>
+            <td><hr></td><td><hr></td>
+        </tr>
+        <tr>
+        <td>Comment:</td>
+        <td><textarea id="textarea" cols="40" rows="6" placeholder="Enter your comment..."></textarea></td>
+        <tr>
+            <td><hr></td><td><hr></td>
+        </tr>
+    <tr>
+        <td>Click the button to submit:</td>
+        <td><button id="button" type="submit">submit</button></td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+ </table>
+</div>
+<h1>
+    Result of your info
+</h1>
+ <table align="right">
+    <tr>
+        <td>Your Name is:</td>
+        <td id="nameresult"></td>
+    </tr>
+        <tr>
+            <td><hr></td><td><hr></td>
+        </tr>
+    <tr>
+        <td>Your lastname is:</td>
+        <td id="lastnameresult"></td>
+    </tr>
+        <tr>
+            <td><hr></td><td><hr></td>
+        </tr>
+    <tr>
+        <td>You are a:</td>
+        <td id="genderresult"></td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    <tr>
+        <td>Your email is:</td>
+        <td id="emailresult"></td>
+    </tr>
+        <tr>
+            <td><hr></td><td><hr></td>
+        </tr>
+    <tr>
+        <td>The password to that email is:</td>
+        <td id="passwordresult"></td>
+        <tr>
+            <td><hr></td><td><hr></td>
+        </tr>
+    <tr>
+        <td>Your feedback for us is:</td>
+        <td id="commentresult"></td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+    <tr>
+        <td><h2>Done?</h2></td>
+        <td><h2>Check your info above and refell it if it's inccorect</h2></td>
+    </tr>
+    <tr>
+        <td><hr></td><td><hr></td>
+    </tr>
+ </table>
+</form>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            let name = document.getElementById('name').value;
+            let lastname = document.getElementById('lastname').value;
+            let password = document.getElementById('password').value;
+            let email = document.getElementById('email').value;
+            let comment = document.getElementById('textarea').value;
+            let gender = document.getElementsByName('gender');
+
+            for (let i = 0; i < gender.length; i++) {
+                if (gender[i].checked === true) {
+                    document.getElementById('genderresult').innerHTML = `${gender[i].value}`;
+                }
+            }
+
+            document.getElementById('nameresult').innerHTML = name;
+            document.getElementById('lastnameresult').innerHTML = lastname;
+            document.getElementById('emailresult').innerHTML = email;
+            document.getElementById('passwordresult').innerHTML = password;
+            document.getElementById('commentresult').innerHTML = comment;
+        }
+    </script>
+
+</body>
+</html>
